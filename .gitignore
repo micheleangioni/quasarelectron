@@ -1,0 +1,25 @@
+# NPM PACKAGES
+node_modules/
+electron/node_modules/
+
+# LOG FILES
+npm-debug.log
+npm-debug.log.*
+selenium-debug.log
+
+# TESTS
+test/unit/coverage
+test/e2e/reports
+
+# CORDOVA
+cordova/platforms
+cordova/plugins
+
+# IDE FILES
+.idea
+config/atom.io/*
+
+# OTHERS
+.DS_Store
+thumbs.db
+!.gitkeep
