@@ -19,7 +19,7 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
-  target: 'node',
+  target: 'electron-renderer', // Added for Electron integration, it was 'node'
   externals: config.externals,
   output: {
     filename: 'electron.js',

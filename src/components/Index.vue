@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import {dialog} from 'electron'
 var moveForce = 30
 var rotateForce = 40
 
