@@ -1,19 +1,19 @@
-# Quasar App
+# Quasar Electron Skeleton
 
-> A Quasar project
+> A Quasar project to build Electron applications
 
 ## Build Setup
 
 ``` bash
 # install dependencies
 $ npm install
+$ cd electron
+$ npm install
 
 # serve with hot reload at localhost:8080
 $ quasar dev
 
-# build for production with minification
-$ quasar build
-
-# lint code
-$ quasar lint
+# load Electron
+$ cd electron
+$ quasar dev
 ```
