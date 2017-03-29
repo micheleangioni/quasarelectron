@@ -26,7 +26,8 @@
 </template>
 
 <script>
-import {dialog} from 'electron'
+const {dialog} = require('electron').remote
+
 var moveForce = 30
 var rotateForce = 40
 
@@ -72,7 +73,12 @@ export default {
       document.addEventListener('touchmove', this.move)
     })
 
-    console.log(dialog)
+    dialog.showMessageBox({
+      title: 'Hello Quasar Electron',
+      message: 'It works!',
+      detail: 'This message is shown by Quasar running inside Electron.\n\nClick OK to proceed...',
+      buttons: ['Ok']
+    })
   },
   beforeDestroy () {
     document.removeEventListener('mousemove', this.move)
