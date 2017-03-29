@@ -16,7 +16,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  target: 'electron-main', // Added for Electron integration
+  target: 'electron-renderer', // Added for Electron integration
   entry: {
     app: './src/main.js'
   },

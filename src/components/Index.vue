@@ -71,6 +71,8 @@ export default {
       document.addEventListener('mousemove', this.move)
       document.addEventListener('touchmove', this.move)
     })
+
+    console.log(dialog)
   },
   beforeDestroy () {
     document.removeEventListener('mousemove', this.move)
