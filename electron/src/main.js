@@ -2,6 +2,7 @@
 
 const
   electron = require('electron'),
+  {ipcMain} = require('electron'),
   path = require('path'),
   app = electron.app,
   BrowserWindow = electron.BrowserWindow
@@ -37,6 +38,11 @@ function createWindow () {
     mainWindow = null
   })
 }
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  // console.log(arg)  // prints "ping"
+  event.returnValue = 'pong'
+})
 
 app.on('ready', createWindow)
 

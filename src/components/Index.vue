@@ -12,6 +12,7 @@
       if using subRoutes
     -->
     <div class="layout-view">
+
       <div class="logo-container non-selectable no-pointer-events">
         <div class="logo" :style="position">
           <img src="~assets/quasar-logo.png">
@@ -21,11 +22,16 @@
           </p>
         </div>
       </div>
+
+      <div class="button-container flex justify-center">
+        <button class="primary" @click="sendSynchronousMessage()">Send Synchronous Message</button>
+      </div>
     </div>
   </q-layout>
 </template>
 
 <script>
+const {ipcRenderer} = require('electron')
 const {dialog} = require('electron').remote
 
 var moveForce = 30
@@ -42,6 +48,7 @@ export default {
       rotateX: 0
     }
   },
+
   computed: {
     position () {
       let transform = `rotateX(${this.rotateX}deg) rotateY(${this.rotateY}deg)`
@@ -54,6 +61,7 @@ export default {
       }
     }
   },
+
   methods: {
     move (event) {
       const {width, height} = Utils.dom.viewport()
@@ -65,8 +73,13 @@ export default {
       this.moveY = (top - halfH) / halfH * -moveForce
       this.rotateY = (left / width * rotateForce * 2) - rotateForce
       this.rotateX = -((top / height * rotateForce * 2) - rotateForce)
+    },
+
+    sendSynchronousMessage () {
+      console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
     }
   },
+
   mounted () {
     this.$nextTick(() => {
       document.addEventListener('mousemove', this.move)
@@ -99,4 +112,6 @@ export default {
 .logo
   position absolute
   transform-style preserve-3d
+.button-container
+  margin-top: 400px
 </style>
