@@ -17,3 +17,7 @@ $ quasar dev
 $ cd electron
 $ quasar dev
 ```
+
+## More info
+
+http://forum.quasar-framework.org/topic/300/how-can-i-use-electron-apis
