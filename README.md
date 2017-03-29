@@ -1,4 +1,4 @@
-# Quasar Electron Skeleton
+# Quasar Electron
 
 > A Quasar project to build Electron applications
 
@@ -21,3 +21,7 @@ $ quasar dev
 ## More info
 
 http://forum.quasar-framework.org/topic/300/how-can-i-use-electron-apis
+
+## License
+
+Quasar Electron is free software distributed under the terms of the MIT license.
